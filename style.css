@@ -1,36 +1,17 @@
 /* style.css */
-body {
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-    background-attachment: fixed;
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    margin: 0;
-    padding-top: 100px;
-}
-
-header {
-    position: fixed; top: 0; left: 0; width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    padding: 20px 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-nav { display: flex; justify-content: space-around; align-items: center; max-width: 1200px; margin: auto; }
-.logo { color: white; font-weight: bold; font-size: 1.5rem; }
+:root { --primary: #1a2a6c; --accent: #fdbb2d; --bg: #f4f7f6; }
+body { background: var(--bg); font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.6; margin: 0; }
+header { background: #fff; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.logo { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
 nav ul { display: flex; list-style: none; }
-nav ul li { margin: 0 15px; }
-nav ul li a { color: white; text-decoration: none; font-weight: 500; }
-
-section {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    padding: 30px; margin: 20px auto; max-width: 800px;
-    border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
+nav ul li { margin-left: 25px; }
+nav ul li a { text-decoration: none; color: #555; font-weight: 600; }
+.hero { background: linear-gradient(rgba(26,42,108,0.9), rgba(26,42,108,0.9)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd756?w=1200');
+        background-size: cover; color: white; padding: 100px 5%; text-align: center; }
+.container { padding: 50px 5%; max-width: 1100px; margin: auto; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+.testimonial { font-style: italic; border-left: 4px solid var(--accent); padding-left: 20px; }
 input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 10px; border: 1px solid #ccc; box-sizing: border-box; }
-button { background: #1a2a6c; color: white; padding: 12px 25px; border: none; border-radius: 30px; cursor: pointer; }
-.whatsapp-button { display: inline-block; background-color: #25d366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 30px; margin-top: 15px; }
+button { background: var(--primary); color: white; padding: 12px 25px; border: none; border-radius: 30px; cursor: pointer; }
+.whatsapp-button { display: inline-block; background-color: #25d366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 30px; }

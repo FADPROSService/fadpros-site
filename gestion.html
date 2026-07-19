@@ -1,6 +1,26 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"><title>FADPROS - Gestion</title></head>
+<html lang="fr">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"><title>Admin - FADPROS</title></head>
 <body>
-    <header><nav><div class="logo">FADPROS</div><ul><li><a href="index.html">Accueil</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="gestion.html">Gestion</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
-    <main><section><h2>Tableau de bord</h2><p>Interface de gestion de vos clients et projets FADPROS.</p></section></main>
+    <header><div class="logo">FADPROS - Admin</div><nav><ul><li><a href="index.html">Accueil</a></li></ul></nav></header>
+    <div class="container" style="margin-top: 100px;">
+        <div id="login-area" class="card" style="text-align:center;">
+            <h3>Accès Administrateur</h3>
+            <input type="password" id="passCode" placeholder="Code secret">
+            <button onclick="checkPassword()">Accéder</button>
+        </div>
+        <div id="admin-content" class="card" style="display:none;">
+            <h2>Demandes Clients</h2>
+            <a href="https://formspree.io/dashboard" target="_blank" class="whatsapp-button">Voir les demandes</a>
+        </div>
+    </div>
+    <script>
+        const CODE_ADMIN = "1234";
+        function checkPassword() {
+            if (document.getElementById("passCode").value === CODE_ADMIN) {
+                document.getElementById("login-area").style.display = "none";
+                document.getElementById("admin-content").style.display = "block";
+            } else { alert("Code incorrect !"); }
+        }
+    </script>
 </body></html>
