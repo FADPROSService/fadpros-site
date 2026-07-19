@@ -1,20 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"><title>FADPROS Service | Accueil</title></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FADPROS Service | Expertise Technique</title>
+</head>
 <body>
-    <header><div class="logo">FADPROS</div><nav><ul><li><a href="index.html">Accueil</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="gestion.html">Gestion</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
-    <section class="hero"><h1>L'Excellence Technique</h1><p>Expertise en Informatique, Électrotechnique et Domotique.</p></section>
-    <div class="container">
-        <h2>Nos Services</h2>
-        <div class="card-grid">
-            <div class="card"><h3>Informatique</h3><p>Développement de systèmes sur mesure.</p></div>
-            <div class="card"><h3>Électrotechnique</h3><p>Automatisation industrielle.</p></div>
-            <div class="card"><h3>Domotique</h3><p>Maison intelligente et régulation.</p></div>
+    <header>
+        <div class="logo">FADPROS</div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#gestion">Gestion</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <h1>L'Excellence Technique à votre service</h1>
+            <p>Conception, automatisation et solutions informatiques professionnelles.</p>
+        </section>
+
+        <div class="container">
+            <section id="portfolio">
+                <h2>Nos Services & Réalisations</h2>
+                <div class="card-grid">
+                    <div class="card"><h3>Informatique</h3><p>Développement de systèmes de gestion sur mesure en C++.</p></div>
+                    <div class="card"><h3>Électrotechnique</h3><p>Automatisation industrielle et systèmes solaires.</p></div>
+                    <div class="card"><h3>Domotique</h3><p>Maison intelligente, régulation thermique et supervision.</p></div>
+                </div>
+                <div class="card-grid" style="margin-top:20px;">
+                    <div class="card"><img src="ingenierie.png" style="width:100%; border-radius:8px;"><h3>Ingénierie</h3><p>Automatisation efficace.</p></div>
+                    <div class="card"><img src="domotique.png" style="width:100%; border-radius:8px;"><h3>Domotique</h3><p>Supervision et régulation.</p></div>
+                </div>
+            </section>
+
+            <section id="gestion" style="margin-top:50px;">
+                <h2>Gestion Administrateur</h2>
+                <div id="login-area" class="card" style="text-align:center;">
+                    <h3>Accès sécurisé</h3>
+                    <input type="password" id="passCode" placeholder="Code secret">
+                    <button onclick="checkPassword()">Accéder</button>
+                </div>
+                <div id="admin-content" class="card" style="display:none;">
+                    <h3>Demandes Clients</h3>
+                    <a href="https://formspree.io/dashboard" target="_blank" class="whatsapp-button">Voir les demandes sur Formspree</a>
+                </div>
+            </section>
+
+            <section id="contact" style="margin-top:50px;">
+                <h2>Contactez FADPROS</h2>
+                <div class="card">
+                    <form action="https://formspree.io/f/ton-identifiant" method="POST">
+                        <input type="text" name="nom" placeholder="Votre nom" required>
+                        <textarea name="message" placeholder="Votre message"></textarea>
+                        <button type="submit">Envoyer par Email</button>
+                    </form>
+                </div>
+            </section>
         </div>
-        <h2 style="text-align:center; margin-top:50px;">Solutions FADPROS</h2>
-        <div class="card-grid">
-            <div class="card"><img src="ingenierie.png" style="width:100%; border-radius:8px;"><h3>Ingénierie</h3><p>Automatisation efficace.</p></div>
-            <div class="card"><img src="domotique.png" style="width:100%; border-radius:8px;"><h3>Domotique</h3><p>Supervision et régulation.</p></div>
-        </div>
-    </div>
-</body></html>
+    </main>
+
+    <script>
+        const CODE_ADMIN = "1234";
+        function checkPassword() {
+            if (document.getElementById("passCode").value === CODE_ADMIN) {
+                document.getElementById("login-area").style.display = "none";
+                document.getElementById("admin-content").style.display = "block";
+            } else { alert("Code incorrect !"); }
+        }
+    </script>
+</body>
+</html>
